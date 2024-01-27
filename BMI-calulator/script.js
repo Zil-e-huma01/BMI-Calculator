@@ -33,15 +33,17 @@ document.addEventListener("DOMContentLoaded", function () {
   function convertToStandardUnit(value, unit) {
     switch (unit) {
       case "in":
-        return value * 0.0254;
+        return value / 39.37; // Convert inches to meters
       case "ft":
-        return value * 0.3048;
+        return value / 3.281; // Convert feet to meters
+      case "cm":
+        return value / 100; //convert to meters
       case "g":
-        return value * 0.001;
+        return value / 1000; // Convert grams to kilograms
       case "lb":
-        return value * 0.453592;
+        return value / 2.205; // Convert pounds to kilograms
       default:
-        return value;
+        return value; // No conversion needed
     }
   }
 
